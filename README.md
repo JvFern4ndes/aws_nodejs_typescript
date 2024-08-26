@@ -33,3 +33,27 @@ Run the following command to create a new project using this template:
 ```bash
 sls create --template-url https://github.com/JvFern4ndes/aws_nodejs_typescript --path <your-project-name>
 ````
+
+## Deploying the Project
+
+After creating your project, navigate to the project directory and deploy it to AWS:
+
+```bash
+cd <your-project-name>
+npm install
+serverless deploy
+````
+
+## Project Structure
+
+* **handler.ts:** Your Lambda function code.
+* **serverless.yml:** The Serverless Framework configuration file.
+* **tsconfig.json:** TypeScript configuration.
+
+## Customization
+
+You can customize this template to fit your project needs by modifying the `serverless.yml`, adding additional resources, or changing the function handlers.
+
+## Contributing
+
+Contributions are welcome! If you find a bug or have a feature request, please open an issue or submit a pull request.
