@@ -1,11 +1,7 @@
 org: joaodev
 app: aws-sls-api
 service: aws-serverless-api
-frameworkVersion: '3'
-
-plugins:
-  - serverless-plugin-typescript
-  - serverless-esbuild
+frameworkVersion: '4'
 
 provider:
   name: aws
