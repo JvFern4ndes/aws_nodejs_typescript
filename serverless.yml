@@ -1,16 +1,31 @@
-# "org" ensures this Service is used with the correct Serverless Framework Access Key.
 org: joaodev
-# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
 app: aws-sls-api
-# "service" is the name of this project. This will also be added to your AWS resource names.
 service: aws-serverless-api
+frameworkVersion: '3'
 
 plugins:
   - serverless-plugin-typescript
+  - serverless-esbuild
 
 provider:
   name: aws
   runtime: nodejs20.x
+
+package:
+  individually: true
+
+custom:
+  esbuild:
+    bundle: true
+    minify: false
+    sourcemap: false
+    exclude:
+      - '@aws-sdk/*'
+    target: node20
+    define:
+      require.resolve: undefined
+    platform: node
+    concurrency: 10
 
 functions:
   hello:
